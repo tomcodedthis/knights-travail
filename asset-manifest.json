@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/odin-knights-travail/static/css/main.4ba543de.css",
-    "main.js": "/odin-knights-travail/static/js/main.bf07e552.js",
+    "main.js": "/odin-knights-travail/static/js/main.475efc98.js",
     "static/js/787.49a6f14b.chunk.js": "/odin-knights-travail/static/js/787.49a6f14b.chunk.js",
     "index.html": "/odin-knights-travail/index.html",
     "main.4ba543de.css.map": "/odin-knights-travail/static/css/main.4ba543de.css.map",
-    "main.bf07e552.js.map": "/odin-knights-travail/static/js/main.bf07e552.js.map",
+    "main.475efc98.js.map": "/odin-knights-travail/static/js/main.475efc98.js.map",
     "787.49a6f14b.chunk.js.map": "/odin-knights-travail/static/js/787.49a6f14b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ba543de.css",
-    "static/js/main.bf07e552.js"
+    "static/js/main.475efc98.js"
   ]
 }
