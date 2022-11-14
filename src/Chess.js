@@ -6,9 +6,13 @@ import Guide from "./Guides";
 import SquareBtn from "./Square";
 
 function Board() {
-  const [endPos, setEndPos] = useState({
+  const [startPos, setStartPos] = useState({
     col: "a",
     row: 1,
+  });
+  const [endPos, setEndPos] = useState({
+    col: "h",
+    row: 8,
   });
   const [moves, setMoves] = useState(0);
   const [piece] = useState("horse");
@@ -17,11 +21,16 @@ function Board() {
     rows: [1, 2, 3, 4, 5, 6, 7, 8].reverse(),
   };
 
+  const setStart = (position) => {
+    if (Object.values(position).includes(undefined)) return;
+
+    setStartPos((startPos.col = position.col), (startPos.row = position.row));
+  };
+
   const setEnd = (position) => {
-    setEndPos({
-      col: position.col,
-      row: position.row,
-    });
+    if (Object.values(position).includes(undefined)) return;
+
+    setEndPos((endPos.col = position.col), (endPos.row = position.row));
   };
 
   const increaseMoves = () => {
@@ -65,7 +74,14 @@ function Board() {
         </div>
 
         <FollowShape />
-        <Controls endPosition={endPos} setEndPos={setEnd} moves={moves} />
+        <Controls
+          startPosition={startPos}
+          setStartPos={setStart}
+          endPosition={endPos}
+          setEndPos={setEnd}
+          layout={layout}
+          moves={moves}
+        />
       </div>
     </>
   );
