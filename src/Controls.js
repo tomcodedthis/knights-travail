@@ -30,7 +30,7 @@ function Controls(props) {
   const NextMoves = () => {
     const columns = props.layout.columns;
     const rows = props.layout.rows;
-    
+
     let pathArray = searchTree(
       Object.values(props.startPosition).join(""),
       Object.values(props.endPosition).join(""),
@@ -38,6 +38,17 @@ function Controls(props) {
     );
 
     clickNext(pathArray);
+  };
+
+  const resetBoard = () => {
+    const squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+      if (square.classList.contains("highlight"))
+        square.classList.remove("highlight");
+      if (square.classList.contains("active"))
+        square.classList.remove("active");
+    });
+    props.resetMoves();
   };
 
   return (
@@ -62,6 +73,7 @@ function Controls(props) {
         <button
           className="bg-emerald-700 hover:bg-emerald-600 text-xl border-emerald-900 border-2 rounded px-2"
           onClick={() => {
+            resetBoard();
             setPosition();
             setTimeout(NextMoves(), 100);
           }}

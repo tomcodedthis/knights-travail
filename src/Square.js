@@ -36,9 +36,10 @@ function SquareBtn(props) {
 
   return (
     <button
-      className={`square ${Active.isActive ? "lightgreen" : Active.shade}`}
+      className={`square ${Active.shade}`}
       position={`${props.position.colIndx}${props.position.rowIndx}`}
-      onClick={() => {
+      onClick={(e) => {
+        e.target.classList.add("active");
         props.setMoves();
         ActiveSqr();
         ClearBoard();

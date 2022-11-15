@@ -37,6 +37,10 @@ function Board() {
     setMoves(moves + 1);
   };
 
+  const resetMoves = () => {
+    setMoves(moves - moves);
+  };
+
   let container = [];
 
   layout.rows.forEach((row) => {
@@ -81,6 +85,7 @@ function Board() {
           setEndPos={setEnd}
           layout={layout}
           moves={moves}
+          resetMoves={resetMoves}
         />
       </div>
     </>
